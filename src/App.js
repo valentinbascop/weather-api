@@ -1,4 +1,5 @@
 import Weather from './componant/meteo';
+import './App.css';
 
 function App() {
   return (
