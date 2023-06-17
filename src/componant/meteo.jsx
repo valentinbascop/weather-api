@@ -109,22 +109,24 @@ const Weather = () => {
 
   // Rendre le composant
   return (
-    <div className='App'>
+    <div className='app-weather'>
         <h1 className='weather-title'>Météo</h1>
-        <div className='weather-input'>
-        <label htmlFor="city">Entrez le nom de la ville :</label>
-        <input type="text" id="city" value={city} onChange={handleCityChange} />
-        </div>
-      {weatherData && ( // Vérifier si les données météorologiques existent
-        <div className='weather-card'>
-          <h2>{weatherData.name}</h2>
-          <div className='weather-info'>
-            <p>{getFrenchDescription(weatherData.weather[0].description)}</p>
-            <p>Température: {weatherData.main.temp} °C</p> 
-            <p className='weather-humidity'>Humidité: {weatherData.main.humidity} %</p>
+        <div class="content-container">
+          <div className='weather-input'>
+          <label htmlFor="city">Entrez le nom de la ville :</label>
+          <input type="text" id="city" value={city} onChange={handleCityChange} />
           </div>
+        {weatherData && ( // Vérifier si les données météorologiques existent
+          <div className='weather-card'>
+            <h2>{weatherData.name}</h2>
+            <div className='weather-info'>
+              <p>{getFrenchDescription(weatherData.weather[0].description)}</p>
+              <p>Température: {weatherData.main.temp} °C</p> 
+              <p className='weather-humidity'>Humidité: {weatherData.main.humidity} %</p>
+            </div>
+          </div>
+        )}
         </div>
-      )}
     </div>
   );
 };
